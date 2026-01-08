@@ -15,5 +15,5 @@ MonoBehaviour:
   <CellPrefab>k__BackingField: {fileID: 1305011685056823625, guid: 9d94c5155fed5dc47837b0b11df53240, type: 3}
   <Width>k__BackingField: 7
   <Height>k__BackingField: 9
-  <CellSize>k__BackingField: 0.7
+  <CellSize>k__BackingField: 0.65
   <CenterGrid>k__BackingField: 1

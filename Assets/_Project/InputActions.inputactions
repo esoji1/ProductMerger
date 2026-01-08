@@ -8,8 +8,17 @@
             "actions": [
                 {
                     "name": "Click",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "b9e83472-450e-48ee-8c87-c121c3544186",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "3cc08e6e-9530-4fad-aedd-df93dd387226",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -20,7 +29,7 @@
                 {
                     "name": "",
                     "id": "5a597aca-a59b-4c3f-9cd8-40004689814a",
-                    "path": "<Mouse>/delta",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -31,11 +40,33 @@
                 {
                     "name": "",
                     "id": "c70d3366-e477-47c9-bb87-1552d1048c6b",
-                    "path": "<Touchscreen>/delta",
+                    "path": "<Touchscreen>/Press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1a062f2-5d3e-4fc9-a315-7ad43e14eb61",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21713167-7510-4ed0-a5fe-f4880a4ca445",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

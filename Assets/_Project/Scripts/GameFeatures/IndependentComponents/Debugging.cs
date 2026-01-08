@@ -1,7 +1,7 @@
 ﻿using _Project.ScriptableObjects;
 using UnityEngine;
 
-namespace _Project.GameFeatures
+namespace _Project.IndependentComponents
 {
     public class Debugging : MonoBehaviour
     {

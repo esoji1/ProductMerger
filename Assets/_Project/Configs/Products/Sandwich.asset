@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2457bcd2b7c64ce7bc2c35da905af3be, type: 3}
+  m_Name: Sandwich
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.Product
+  <Type>k__BackingField: 5
+  <Icon>k__BackingField: {fileID: -5211771596868668710, guid: f186cc5ce80f16e43abf2e9f6b25edd7, type: 3}
+  <Prefab>k__BackingField: {fileID: 1973838954600791553, guid: 1188555f309ee874184a940e18782c0c, type: 3}

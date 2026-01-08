@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2457bcd2b7c64ce7bc2c35da905af3be, type: 3}
+  m_Name: Taco
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.Product
+  <Type>k__BackingField: 6
+  <Icon>k__BackingField: {fileID: -2925908689177850180, guid: 0cfe18340fac1f04eb613e282aac1ee8, type: 3}
+  <Prefab>k__BackingField: {fileID: 8921874651357837549, guid: 568b65ce33e06cc48b7daeab134740e0, type: 3}

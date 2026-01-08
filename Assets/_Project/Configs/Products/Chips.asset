@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2457bcd2b7c64ce7bc2c35da905af3be, type: 3}
+  m_Name: Chips
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.Product
+  <Type>k__BackingField: 2
+  <Icon>k__BackingField: {fileID: 5247816500109422983, guid: 521dc97b0cb275845b8590ebc18b3ffa, type: 3}
+  <Prefab>k__BackingField: {fileID: 223307876183223034, guid: f170f80856c285d408870548273fbf43, type: 3}

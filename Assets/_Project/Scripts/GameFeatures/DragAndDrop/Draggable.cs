@@ -10,6 +10,13 @@ namespace _Project.GameFeatures.DragAndDrop
         private Vector3 _initialPosition;
         private Cell _currentCell;
 
+        private void Start()
+        {
+            Cell targetCell = GetCellUnderObject();
+            transform.position = targetCell.transform.position;
+            targetCell.ChangeIsCellBusy(true);
+        }
+
         public void OnDragStart()
         {
             _initialPosition = transform.position;

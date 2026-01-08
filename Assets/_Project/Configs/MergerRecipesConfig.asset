@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030b182c73814bf7a84ae4f3ba835054, type: 3}
+  m_Name: MergerRecipesConfig
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.MergerRecipes
+  <MergeRecipes>k__BackingField:
+  - Ingredient1: {fileID: 11400000, guid: 91610bc7ed9cb454d8dfb941ed2ae37a, type: 2}
+    Ingredient2: {fileID: 11400000, guid: 91610bc7ed9cb454d8dfb941ed2ae37a, type: 2}
+    ResultItem: {fileID: 11400000, guid: 466f63fe0b8d1284494a38c24692aa3d, type: 2}
+  - Ingredient1: {fileID: 11400000, guid: 466f63fe0b8d1284494a38c24692aa3d, type: 2}
+    Ingredient2: {fileID: 11400000, guid: 466f63fe0b8d1284494a38c24692aa3d, type: 2}
+    ResultItem: {fileID: 11400000, guid: 0ed2a8608e3fca545a371884be904106, type: 2}
+  - Ingredient1: {fileID: 11400000, guid: 0ed2a8608e3fca545a371884be904106, type: 2}
+    Ingredient2: {fileID: 11400000, guid: 0ed2a8608e3fca545a371884be904106, type: 2}
+    ResultItem: {fileID: 11400000, guid: 0dac02d4b7ea5184c847313e5e1118be, type: 2}
+  - Ingredient1: {fileID: 11400000, guid: 0dac02d4b7ea5184c847313e5e1118be, type: 2}
+    Ingredient2: {fileID: 11400000, guid: 0dac02d4b7ea5184c847313e5e1118be, type: 2}
+    ResultItem: {fileID: 11400000, guid: 3f8aba8fdca947544b63eb9f870a4bcb, type: 2}
+  - Ingredient1: {fileID: 11400000, guid: 3f8aba8fdca947544b63eb9f870a4bcb, type: 2}
+    Ingredient2: {fileID: 11400000, guid: 3f8aba8fdca947544b63eb9f870a4bcb, type: 2}
+    ResultItem: {fileID: 11400000, guid: e5dedf356724dbb4bb648224c2e1dffd, type: 2}
+  - Ingredient1: {fileID: 11400000, guid: e5dedf356724dbb4bb648224c2e1dffd, type: 2}
+    Ingredient2: {fileID: 11400000, guid: e5dedf356724dbb4bb648224c2e1dffd, type: 2}
+    ResultItem: {fileID: 11400000, guid: ba6a717bfd739524f8e899738b76ba4c, type: 2}

@@ -16,12 +16,12 @@ namespace _Project.Core.Installers
         [SerializeField] private GridGenerationConfig _gridConfigurationConfig;
         [SerializeField] private PlayerInput _playerInput;
         [SerializeField] private MergerRecipesConfig _mergerRecipesConfig;
-        [SerializeField]   private List<Product> _products;
-        
+        [SerializeField] private List<Product> _products;
+
         public override void InstallBindings()
         {
             BindGridGeneration();
-            BindInputController();  
+            BindInputController();
             BindDrag();
             ProductMerger();
         }
@@ -31,6 +31,10 @@ namespace _Project.Core.Installers
             Container
                 .Bind<GridGenerationConfig>()
                 .FromInstance(_gridConfigurationConfig)
+                .AsSingle();
+
+            Container
+                .BindInterfacesAndSelfTo<GridManager>()
                 .AsSingle();
             
             Container
@@ -42,7 +46,7 @@ namespace _Project.Core.Installers
         private void BindInputController()
         {
             Container
-                .Bind<InputController>()
+                .BindInterfacesAndSelfTo<InputController>()
                 .AsSingle()
                 .WithArguments(_playerInput);
         }
@@ -60,7 +64,7 @@ namespace _Project.Core.Installers
                 .Bind<MergerRecipesConfig>()
                 .FromInstance(_mergerRecipesConfig)
                 .AsSingle();
-            
+
             Container
                 .Bind<ProductManager>()
                 .AsSingle();
@@ -69,7 +73,7 @@ namespace _Project.Core.Installers
                 .Bind<List<Product>>()
                 .FromInstance(_products)
                 .AsSingle();
-            
+
             Container
                 .Bind<ProductFactory>()
                 .AsSingle()

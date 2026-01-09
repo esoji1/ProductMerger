@@ -1,5 +1,4 @@
 ﻿using _Project.ScriptableObjects;
-using UnityEngine;
 
 namespace _Project.GameFeatures.ProductMerger
 {

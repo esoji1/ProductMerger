@@ -1,5 +1,4 @@
-﻿using _Project.Core.Services;
-using _Project.ScriptableObjects;
+﻿using _Project.ScriptableObjects;
 using UnityEngine;
 using Zenject;
 
@@ -9,14 +8,14 @@ namespace _Project.GameFeatures.Grid
     {
         private GridGenerationConfig _gridGenerationConfig;
         private Transform _gridTransform;
-        private GridService _gridService;
+        private GridManager _gridManager;
 
         public GridGeneration(GridGenerationConfig gridGenerationConfig, Transform gridTransform,
-            GridService gridService)
+            GridManager gridManager)
         {
             _gridGenerationConfig = gridGenerationConfig;
             _gridTransform = gridTransform;
-            _gridService  = gridService;
+            _gridManager  = gridManager;
         }
 
         public void Initialize() =>
@@ -40,7 +39,7 @@ namespace _Project.GameFeatures.Grid
 
                     Cell cell = Object.Instantiate(_gridGenerationConfig.CellPrefab, position, Quaternion.identity,
                         _gridTransform);
-                    _gridService.AddCell(cell);
+                    _gridManager.AddCell(cell);
                     cell.name = $"Cell ({cellIndex})";
                     cellIndex++;
                 }

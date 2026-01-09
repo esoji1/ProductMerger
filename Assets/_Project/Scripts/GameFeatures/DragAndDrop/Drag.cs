@@ -32,9 +32,6 @@ namespace _Project.GameFeatures.DragAndDrop
             _inputController.ClickAction.started += OnClickStarted;
             _inputController.ClickAction.canceled += OnClickCanceled;
             _inputController.PositionAction.performed += OnPositionPerformed;
-
-            _inputController.ClickAction.Enable();
-            _inputController.PositionAction.Enable();
         }
 
         public void Dispose()
@@ -42,9 +39,6 @@ namespace _Project.GameFeatures.DragAndDrop
             _inputController.ClickAction.started -= OnClickStarted;
             _inputController.ClickAction.canceled -= OnClickCanceled;
             _inputController.PositionAction.performed -= OnPositionPerformed;
-
-            _inputController.ClickAction.Disable();
-            _inputController.PositionAction.Disable();
         }
 
         private void OnClickStarted(InputAction.CallbackContext ctx)

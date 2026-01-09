@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using _Project.GameFeatures.Grid;
 using _Project.GameFeatures.Input;
 using _Project.GameFeatures.Merger.ProductMerger;
@@ -21,13 +20,13 @@ namespace _Project.GameFeatures.ProductSpawner
 
         private Camera _mainCamera;
 
-        private void OnEnable()
+        private void Start()
         {
             _mainCamera = Camera.main;
             _inputController.ClickAction.started += OnClickStarted;
         }
 
-        private void OnDisable() =>
+        private void OnDestroy() =>
             _inputController.ClickAction.started -= OnClickStarted;
 
         [Inject]

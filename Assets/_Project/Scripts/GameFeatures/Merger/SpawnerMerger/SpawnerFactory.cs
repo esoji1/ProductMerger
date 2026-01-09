@@ -33,7 +33,8 @@ namespace _Project.GameFeatures.Merger.SpawnerMerger
 
             if (gameObject.TryGetComponent(out SpawnerMerge merge))
                 merge.Construct(_mergerManager, this);
-            else if (gameObject.TryGetComponent(out ProductSpawner.Spawner spawner))
+            
+            if (gameObject.TryGetComponent(out ProductSpawner.Spawner spawner))
                 spawner.Construct(_gridManager, _inputController, _productFactory);
 
             return spawnerConfigConfig;

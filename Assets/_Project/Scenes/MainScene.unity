@@ -748,8 +748,9 @@ GameObject:
   - component: {fileID: 551369927}
   - component: {fileID: 551369926}
   - component: {fileID: 551369925}
+  - component: {fileID: 551369928}
   m_Layer: 5
-  m_Name: SpawnButton
+  m_Name: SpawnerView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -857,6 +858,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551369923}
   m_CullTransparentMesh: 1
+--- !u!114 &551369928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551369923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e2d63e86ad4f279e544d455541f829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.GameFeatures.UI.Spawner.SpawnerView
+  _spawnButton: {fileID: 551369925}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,6 +1110,7 @@ MonoBehaviour:
   _spawners:
   - {fileID: 11400000, guid: 6ce81840713aa39449444d4ef2c1ca0c, type: 2}
   - {fileID: 11400000, guid: d7b2a0839462cd146a2786c58067a481, type: 2}
+  _spawnerView: {fileID: 551369928}
 --- !u!1001 &875771578
 PrefabInstance:
   m_ObjectHideFlags: 0

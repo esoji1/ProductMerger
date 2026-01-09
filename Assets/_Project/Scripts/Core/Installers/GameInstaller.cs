@@ -5,6 +5,7 @@ using _Project.GameFeatures.Input;
 using _Project.GameFeatures.Merger;
 using _Project.GameFeatures.Merger.ProductMerger;
 using _Project.GameFeatures.Merger.SpawnerMerger;
+using _Project.GameFeatures.UI.Spawner;
 using _Project.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,6 +21,7 @@ namespace _Project.Core.Installers
         [SerializeField] private MergerRecipesConfig _mergerRecipesConfig;
         [SerializeField] private List<ProductConfig> _products;
         [SerializeField] private List<SpawnerConfig> _spawners;
+        [SerializeField] private SpawnerView _spawnerView;
 
         public override void InstallBindings()
         {
@@ -28,6 +30,7 @@ namespace _Project.Core.Installers
             BindDrag();
             BindProductMerger();
             BindSpawnerMerger();
+            BindSpawnerPresenter();
         }
 
         private void BindGridGeneration()
@@ -93,6 +96,18 @@ namespace _Project.Core.Installers
             
             Container
                 .Bind<SpawnerFactory>()
+                .AsSingle();
+        }
+
+        private void BindSpawnerPresenter()
+        {
+            Container
+                .Bind<SpawnerView>()
+                .FromInstance(_spawnerView)
+                .AsSingle();
+            
+            Container
+                .BindInterfacesAndSelfTo<SpawnerPresenter>()
                 .AsSingle();
         }
     }

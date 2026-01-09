@@ -8,6 +8,7 @@ namespace _Project.Core.Installers
         public override void InstallBindings()
         {
             BindLayers();
+            BindFPSCapRemover();
         }
 
         private void BindLayers()
@@ -15,6 +16,14 @@ namespace _Project.Core.Installers
             Container
                 .BindInterfacesAndSelfTo<Layers>()
                 .AsSingle();
+        }
+
+        private void BindFPSCapRemover()
+        {
+            Container
+                .Bind<FPSCapRemover>()
+                .AsSingle()
+                .NonLazy();
         }
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030b182c73814bf7a84ae4f3ba835054, type: 3}
   m_Name: MergerRecipesConfig
   m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.MergerRecipes
-  <MergeRecipes>k__BackingField:
+  <ProductRecipes>k__BackingField:
   - Ingredient1: {fileID: 11400000, guid: 91610bc7ed9cb454d8dfb941ed2ae37a, type: 2}
     Ingredient2: {fileID: 11400000, guid: 91610bc7ed9cb454d8dfb941ed2ae37a, type: 2}
     ResultItem: {fileID: 11400000, guid: 466f63fe0b8d1284494a38c24692aa3d, type: 2}
@@ -31,3 +31,7 @@ MonoBehaviour:
   - Ingredient1: {fileID: 11400000, guid: e5dedf356724dbb4bb648224c2e1dffd, type: 2}
     Ingredient2: {fileID: 11400000, guid: e5dedf356724dbb4bb648224c2e1dffd, type: 2}
     ResultItem: {fileID: 11400000, guid: ba6a717bfd739524f8e899738b76ba4c, type: 2}
+  <SpawnerMerge>k__BackingField:
+  - Ingredient1: {fileID: 11400000, guid: 6ce81840713aa39449444d4ef2c1ca0c, type: 2}
+    Ingredient2: {fileID: 11400000, guid: 6ce81840713aa39449444d4ef2c1ca0c, type: 2}
+    ResultItem: {fileID: 11400000, guid: d7b2a0839462cd146a2786c58067a481, type: 2}

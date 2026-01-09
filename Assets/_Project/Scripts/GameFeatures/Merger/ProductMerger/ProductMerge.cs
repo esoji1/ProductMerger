@@ -2,12 +2,12 @@
 using UnityEngine;
 using Zenject;
 
-namespace _Project.GameFeatures.ProductMerger
+namespace _Project.GameFeatures.Merger.ProductMerger
 {
     [RequireComponent(typeof(ProductType))]
-    public class Merge : MonoBehaviour
+    public class ProductMerge : MonoBehaviour
     {
-        private ProductManager _productManager;
+        private MergerManager _mergerManager;
         private ProductFactory _productFactory;
 
         private ProductType _productType;
@@ -17,27 +17,27 @@ namespace _Project.GameFeatures.ProductMerger
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Product resultProduct = null;
+            ProductConfig resultProductConfig = null;
 
             if (gameObject.GetInstanceID() > other.gameObject.GetInstanceID())
                 return;
 
             if (other.TryGetComponent(out ProductType productType))
-                resultProduct = _productManager.TryMerge(_productType.Product, productType.Product);
+                resultProductConfig = _mergerManager.TryProductMerge(_productType.ProductConfig, productType.ProductConfig);
 
-            if (resultProduct != null)
+            if (resultProductConfig != null)
             {
                 Vector2 mergePosition = (transform.position + other.transform.position) / 2f;
-                _productFactory.Get(resultProduct.Type, mergePosition);
+                _productFactory.Get(resultProductConfig.Type, mergePosition);
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
         }
 
         [Inject]
-        public void Construct(ProductManager productManager, ProductFactory productFactory)
+        public void Construct(MergerManager mergerManager, ProductFactory productFactory)
         {
-            _productManager = productManager;
+            _mergerManager = mergerManager;
             _productFactory = productFactory;
         }
     }

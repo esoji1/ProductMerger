@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617ec21767b54070811a0f63755086b8, type: 3}
+  m_Name: ProductSpawner1Config
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.ScriptableObjects.ProductSpawnerConfig
+  <Product1>k__BackingField: {fileID: 11400000, guid: 91610bc7ed9cb454d8dfb941ed2ae37a, type: 2}
+  <Product2>k__BackingField: {fileID: 11400000, guid: 466f63fe0b8d1284494a38c24692aa3d, type: 2}
+  <PercentageProductLoss1>k__BackingField: 0.9
+  <PercentageProductLoss2>k__BackingField: 0.1
+  <SpawnerLayerMack>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 128

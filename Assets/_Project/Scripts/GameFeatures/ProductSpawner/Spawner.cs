@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using _Project.GameFeatures.Grid;
 using _Project.GameFeatures.Input;
-using _Project.GameFeatures.ProductMerger;
+using _Project.GameFeatures.Merger.ProductMerger;
 using _Project.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,34 +13,41 @@ namespace _Project.GameFeatures.ProductSpawner
 {
     public class Spawner : MonoBehaviour
     {
-        [SerializeField] private Product _product1;
-        [SerializeField] private Product _product2;
-        [SerializeField] private float _percentageProductLoss1;
-        [SerializeField] private float _percentageProductLoss2;
-        [SerializeField] private LayerMask _layerMask;
+        [SerializeField] private ProductSpawnerConfig _productSpawnerConfig;
 
-        [Inject] private GridManager _gridManager;
-        [Inject] private InputController _inputController;
-        [Inject] private ProductFactory _productFactory;
+        private GridManager _gridManager;
+        private InputController _inputController;
+        private ProductFactory _productFactory;
 
         private Camera _mainCamera;
 
-        private void Start() =>
+        private void OnEnable()
+        {
             _mainCamera = Camera.main;
-
-        private void OnEnable() =>
             _inputController.ClickAction.started += OnClickStarted;
+        }
 
         private void OnDisable() =>
             _inputController.ClickAction.started -= OnClickStarted;
+
+        [Inject]
+        public void Construct(GridManager gridManager, InputController inputController, ProductFactory productFactory)
+        {
+            _gridManager = gridManager;
+            _inputController = inputController;
+            _productFactory = productFactory;
+        }
 
         private void OnClickStarted(InputAction.CallbackContext ctx)
         {
             Vector2 screenPos = _inputController.PositionAction.ReadValue<Vector2>();
             Ray ray = _mainCamera.ScreenPointToRay(screenPos);
-            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity, _layerMask);
+            RaycastHit2D hit =
+                Physics2D.GetRayIntersection(ray, Mathf.Infinity, _productSpawnerConfig.SpawnerLayerMack);
 
-            if (hit.collider == null || !hit.collider.TryGetComponent<Spawner>(out _))
+            if (hit.collider == null ||
+                hit.collider.TryGetComponent(out Spawner spawner) == false ||
+                spawner != this)
                 return;
 
             Cell freeCell = GetRandomFreeCell();
@@ -50,10 +57,11 @@ namespace _Project.GameFeatures.ProductSpawner
 
             float randomValue = Random.value;
 
-            if (randomValue < _percentageProductLoss1)
-                _productFactory.Get(_product1.Type, freeCell.transform.position);
-            else if (randomValue < _percentageProductLoss1 + _percentageProductLoss2)
-                _productFactory.Get(_product2.Type, freeCell.transform.position);
+            if (randomValue < _productSpawnerConfig.PercentageProductLoss1)
+                _productFactory.Get(_productSpawnerConfig.Product1.Type, freeCell.transform.position);
+            else if (randomValue < _productSpawnerConfig.PercentageProductLoss1 +
+                     _productSpawnerConfig.PercentageProductLoss2)
+                _productFactory.Get(_productSpawnerConfig.Product2.Type, freeCell.transform.position);
         }
 
         private Cell GetRandomFreeCell()

@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e1990261174777bd54c687b49da830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.GameFeatures.ProductMerger.ProductType
-  _product: {fileID: 11400000, guid: 3f8aba8fdca947544b63eb9f870a4bcb, type: 2}
+  productConfig: {fileID: 11400000, guid: 3f8aba8fdca947544b63eb9f870a4bcb, type: 2}
 --- !u!114 &-4727150207137101264
 MonoBehaviour:
   m_ObjectHideFlags: 0

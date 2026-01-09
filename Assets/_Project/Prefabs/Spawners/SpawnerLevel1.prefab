@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 3893994847604942828}
   - component: {fileID: 627759512377816376}
   - component: {fileID: 3762273349115643904}
+  - component: {fileID: 4178308454394703822}
   - component: {fileID: 4613350037545470823}
+  - component: {fileID: 4645870751753798381}
+  - component: {fileID: 1996699039294235390}
+  - component: {fileID: 6436997794320445772}
   m_Layer: 7
   m_Name: SpawnerLevel1
   m_TagString: Untagged
@@ -123,7 +127,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -139,6 +143,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &4178308454394703822
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148759922414020701}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &4613350037545470823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +185,41 @@ MonoBehaviour:
   _cellLayerMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &4645870751753798381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148759922414020701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6895d7555f934967b2852e8e8be3e547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.GameFeatures.ProductSpawner.Spawner
+  _productSpawnerConfig: {fileID: 11400000, guid: c9aa82d121a8bcc46aed9ab947f4a13e, type: 2}
+--- !u!114 &1996699039294235390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148759922414020701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc794d819d540278dafa02f675702fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.GameFeatures.Merger.SpawnerMerger.SpawnerType
+  spawnerConfig: {fileID: 11400000, guid: 6ce81840713aa39449444d4ef2c1ca0c, type: 2}
+--- !u!114 &6436997794320445772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148759922414020701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34568c89d4ec4f1ca938b692318e5528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.GameFeatures.Merger.SpawnerMerger.Merge

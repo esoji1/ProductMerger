@@ -2,7 +2,9 @@
 using _Project.GameFeatures.DragAndDrop;
 using _Project.GameFeatures.Grid;
 using _Project.GameFeatures.Input;
-using _Project.GameFeatures.ProductMerger;
+using _Project.GameFeatures.Merger;
+using _Project.GameFeatures.Merger.ProductMerger;
+using _Project.GameFeatures.Merger.SpawnerMerger;
 using _Project.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,14 +18,16 @@ namespace _Project.Core.Installers
         [SerializeField] private GridGenerationConfig _gridConfigurationConfig;
         [SerializeField] private PlayerInput _playerInput;
         [SerializeField] private MergerRecipesConfig _mergerRecipesConfig;
-        [SerializeField] private List<Product> _products;
+        [SerializeField] private List<ProductConfig> _products;
+        [SerializeField] private List<SpawnerConfig> _spawners;
 
         public override void InstallBindings()
         {
             BindGridGeneration();
             BindInputController();
             BindDrag();
-            ProductMerger();
+            BindProductMerger();
+            BindSpawnerMerger();
         }
 
         private void BindGridGeneration()
@@ -36,7 +40,7 @@ namespace _Project.Core.Installers
             Container
                 .BindInterfacesAndSelfTo<GridManager>()
                 .AsSingle();
-            
+
             Container
                 .BindInterfacesTo<GridGeneration>()
                 .AsSingle()
@@ -58,7 +62,7 @@ namespace _Project.Core.Installers
                 .AsSingle();
         }
 
-        private void ProductMerger()
+        private void BindProductMerger()
         {
             Container
                 .Bind<MergerRecipesConfig>()
@@ -66,11 +70,11 @@ namespace _Project.Core.Installers
                 .AsSingle();
 
             Container
-                .Bind<ProductManager>()
+                .Bind<MergerManager>()
                 .AsSingle();
 
             Container
-                .Bind<List<Product>>()
+                .Bind<List<ProductConfig>>()
                 .FromInstance(_products)
                 .AsSingle();
 
@@ -78,6 +82,18 @@ namespace _Project.Core.Installers
                 .Bind<ProductFactory>()
                 .AsSingle()
                 .NonLazy();
+        }
+        
+        private void BindSpawnerMerger()
+        {
+            Container
+                .Bind<List<SpawnerConfig>>()
+                .FromInstance(_spawners)
+                .AsSingle();
+            
+            Container
+                .Bind<SpawnerFactory>()
+                .AsSingle();
         }
     }
 }

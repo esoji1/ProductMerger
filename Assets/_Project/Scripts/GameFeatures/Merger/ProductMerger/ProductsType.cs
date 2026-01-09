@@ -1,4 +1,4 @@
-﻿namespace _Project.GameFeatures.ProductMerger
+﻿namespace _Project.GameFeatures.Merger.ProductMerger
 {
     public enum ProductsType
     {
